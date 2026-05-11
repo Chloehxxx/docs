@@ -1,0 +1,85 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "luma",
+  "name": "Qwen Cloud",
+  "colors": {
+    "primary": "#7c7c7c",
+    "light": "#0c0c0c",
+    "dark": "#cdcdcd"
+  },
+  "favicon": "https://media.brand.dev/487d6b2a-e967-40f3-b46b-68c445b88e2b.jpg",
+  "logo": {
+    "light": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg",
+    "dark": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://home.qwencloud.com/"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Token Plan",
+            "pages": [
+              "token-plan/overview",
+              "token-plan/pricing",
+              "token-plan/credits"
+            ]
+          },
+          {
+            "group": "AI Tools",
+            "pages": [
+              "token-plan/tools/qwen-code",
+              "token-plan/tools/cline",
+              "token-plan/tools/claude-code",
+              "token-plan/tools/cursor",
+              "token-plan/tools/opencode",
+              "token-plan/tools/codex",
+              "token-plan/tools/openclaw"
+            ]
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              "account/subscription",
+              "account/usage",
+              "account/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

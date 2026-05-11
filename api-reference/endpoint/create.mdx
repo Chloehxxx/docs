@@ -1,0 +1,173 @@
+---
+title: "POST /v1/chat/completions — generate AI responses"
+description: "Send a chat message to a Qwen Cloud model and receive an AI-generated response. Supports streaming, temperature control, and token limits."
+---
+
+The `POST /v1/chat/completions` endpoint is the core of the Qwen Cloud API. You send a conversation as an array of messages and receive a model-generated reply. The endpoint follows the OpenAI Chat Completions format, so any code written for the OpenAI API works here with only a base URL and API key change.
+
+## Request
+
+**Method:** `POST`  
+**URL:** `https://api.qwencloud.com/v1/chat/completions`
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  Your API key as a Bearer token. Format: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+<ParamField header="Content-Type" type="string" required>
+  Must be `application/json`.
+</ParamField>
+
+### Body
+
+<ParamField body="model" type="string" required>
+  The ID of the model to use. Must be one of: `qwen3.6-plus`, `glm-5`, `minimax-m2.5`, `deepseek-v3.2`. Call [GET /v1/models](/api-reference/endpoint/get) to confirm which models are available on your plan.
+</ParamField>
+
+<ParamField body="messages" type="object[]" required>
+  An array of message objects representing the conversation. Each object must include a `role` (`"system"`, `"user"`, or `"assistant"`) and a `content` string.
+</ParamField>
+
+<ParamField body="temperature" type="number">
+  Sampling temperature, between `0` and `2`. Higher values produce more varied output; lower values produce more deterministic output. Defaults to `1`.
+</ParamField>
+
+<ParamField body="max_tokens" type="integer">
+  Maximum number of tokens to generate in the response. When omitted, the model uses its default limit.
+</ParamField>
+
+<ParamField body="stream" type="boolean">
+  Set to `true` to receive the response as a stream of server-sent events (SSE) instead of a single JSON object. Defaults to `false`.
+</ParamField>
+
+## Response
+
+### Response fields
+
+<ResponseField name="id" type="string">
+  A unique identifier for this completion. For example, `"chatcmpl-abc123"`.
+</ResponseField>
+
+<ResponseField name="object" type="string">
+  Always `"chat.completion"` for non-streaming responses.
+</ResponseField>
+
+<ResponseField name="created" type="integer">
+  Unix timestamp (seconds) for when the completion was generated.
+</ResponseField>
+
+<ResponseField name="model" type="string">
+  The model that generated the response.
+</ResponseField>
+
+<ResponseField name="choices" type="object[]">
+  Array of generated completions. Typically contains one item.
+
+  <Expandable title="properties">
+    <ResponseField name="index" type="integer">
+      Zero-based index of this choice.
+    </ResponseField>
+
+    <ResponseField name="message" type="object">
+      The generated message object, with `role` set to `"assistant"` and `content` containing the model's reply.
+    </ResponseField>
+
+    <ResponseField name="finish_reason" type="string">
+      Why the model stopped generating. Common values: `"stop"` (natural end), `"length"` (hit `max_tokens`).
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="usage" type="object">
+  Token usage statistics for the request.
+
+  <Expandable title="properties">
+    <ResponseField name="prompt_tokens" type="integer">
+      Number of tokens in the input messages.
+    </ResponseField>
+
+    <ResponseField name="completion_tokens" type="integer">
+      Number of tokens in the generated response.
+    </ResponseField>
+
+    <ResponseField name="total_tokens" type="integer">
+      Total tokens consumed. This is what counts against your plan's credit quota.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+## Examples
+
+<CodeGroup>
+
+```bash curl
+curl https://api.qwencloud.com/v1/chat/completions \
+  --header "Authorization: Bearer YOUR_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "model": "qwen3.6-plus",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistant."
+      },
+      {
+        "role": "user",
+        "content": "What is the capital of France?"
+      }
+    ],
+    "temperature": 0.7,
+    "max_tokens": 256
+  }'
+```
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.qwencloud.com/v1",
+)
+
+response = client.chat.completions.create(
+    model="qwen3.6-plus",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is the capital of France?"},
+    ],
+    temperature=0.7,
+    max_tokens=256,
+)
+
+print(response.choices[0].message.content)
+```
+
+</CodeGroup>
+
+### Example response
+
+```json
+{
+  "id": "chatcmpl-a1b2c3d4e5",
+  "object": "chat.completion",
+  "created": 1746000000,
+  "model": "qwen3.6-plus",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The capital of France is Paris."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 29,
+    "completion_tokens": 9,
+    "total_tokens": 38
+  }
+}
+```

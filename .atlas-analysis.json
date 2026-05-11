@@ -1,0 +1,86 @@
+{
+  "projectType": "saas",
+  "projectName": "Qwen Cloud",
+  "projectDescription": "Qwen Cloud is a subscription-based AI model access platform offering unified access to leading text, vision, speech, and image generation models for professional AI coding workflows.",
+  "theme": "luma",
+  "primaryColor": "#7c7c7c",
+  "lightColor": "#0c0c0c",
+  "darkColor": "#cdcdcd",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Token Plan",
+            "pages": [
+              "token-plan/overview",
+              "token-plan/pricing",
+              "token-plan/credits"
+            ]
+          },
+          {
+            "group": "AI Tools",
+            "pages": [
+              "token-plan/tools/qwen-code",
+              "token-plan/tools/cline",
+              "token-plan/tools/claude-code",
+              "token-plan/tools/cursor",
+              "token-plan/tools/opencode",
+              "token-plan/tools/codex",
+              "token-plan/tools/openclaw"
+            ]
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              "account/subscription",
+              "account/usage",
+              "account/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Unified access to multiple leading AI models (Qwen3.6-Plus, GLM-5, MiniMax-M2.5, DeepSeek-V3.2)",
+    "OpenAI and Anthropic protocol compatibility for seamless tool integration",
+    "Token-based subscription plans with tiered credit quotas",
+    "No training on user data",
+    "Support for popular AI coding tools: Qwen Code, Cline, Claude Code, Cursor, OpenCode, Codex, Kilo CLI, OpenClaw",
+    "Three subscription tiers: Standard, Pro, and Max"
+  ],
+  "publicApiSurface": [
+    "POST /chat/completions — OpenAI-compatible chat endpoint",
+    "GET /models — List available models",
+    "Token Plan subscription management",
+    "Credit usage tracking API"
+  ]
+}

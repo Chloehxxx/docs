@@ -1,0 +1,104 @@
+---
+title: "Error codes and troubleshooting the Qwen Cloud API"
+description: "A reference for Qwen Cloud API error codes—401, 402, 429, and 500—covering what causes each error and how to resolve it in your integration."
+---
+
+When the Qwen Cloud API returns an error, the HTTP status code tells you what went wrong and where to look first. This page covers the most common error codes, what causes each one, and the steps you can take to resolve them. Most errors fall into one of four categories: authentication problems, billing issues, rate limiting, or temporary server errors.
+
+## HTTP error codes
+
+### 401 Unauthorized
+
+Your API key is missing, malformed, or invalid.
+
+**How to fix:**
+
+- Confirm that you're including the `Authorization` header in your request.
+- Check that the header value is formatted as `Bearer YOUR_API_KEY` with a space between `Bearer` and the key.
+- Verify that you copied the full key from the [Qwen Cloud dashboard](https://home.qwencloud.com/). API keys are long strings—a truncated key will fail silently.
+- If you recently regenerated your API key, update all integrations to use the new one.
+
+```bash curl
+# Correct format
+curl https://api.qwencloud.com/v1/chat/completions \
+  --header "Authorization: Bearer YOUR_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{"model": "qwen3.6-plus", "messages": [{"role": "user", "content": "Hello"}]}'
+```
+
+### 402 Payment Required
+
+Your account has insufficient credits or no active Token Plan subscription.
+
+<Warning>
+  A 402 error means your requests are blocked until your credit balance is restored. Check your [pricing and plan options](/token-plan/pricing) to upgrade or renew your subscription.
+</Warning>
+
+**How to fix:**
+
+- Log in to the dashboard and check your credit balance on the [usage page](/account/usage).
+- If your credits are exhausted, wait for your monthly renewal or upgrade to a higher plan.
+- If you have no active subscription, visit [token-plan/pricing](/token-plan/pricing) to subscribe.
+
+### 429 Too Many Requests
+
+You've exceeded the request rate allowed by your Token Plan.
+
+**How to fix:**
+
+- Slow down your request rate. Your plan's credit quota determines how fast you can consume tokens.
+- Implement exponential backoff in your code (see [handling rate limits](#handling-rate-limits) below).
+- If you consistently hit this limit, consider upgrading to a higher-tier plan.
+
+### 500 Internal Server Error
+
+An unexpected error occurred on Qwen Cloud's servers.
+
+**How to fix:**
+
+- Retry the request. Server errors are usually transient and resolve within seconds.
+- Use exponential backoff to avoid hammering the API while it recovers.
+- If the error persists for more than a few minutes, check for any service status announcements.
+
+## Debugging checklist
+
+When a request fails, work through these checks in order:
+
+1. **Verify your API key.** Copy it directly from the dashboard and confirm the `Authorization` header is formatted correctly.
+2. **Check your credit balance.** Log in to the [usage page](/account/usage) and confirm your remaining credits.
+3. **Confirm the base URL.** Make sure you're sending requests to `https://api.qwencloud.com/v1` and not a different endpoint.
+4. **Validate your request body.** Ensure `model` is a valid model ID and `messages` is a non-empty array.
+5. **Inspect the response body.** The API returns a JSON error object with a `message` field that explains the specific problem.
+
+## Handling rate limits
+
+If your integration sends bursts of requests, implement retry logic with exponential backoff to handle 429 errors gracefully.
+
+```python Python
+import time
+import random
+from openai import OpenAI, RateLimitError
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.qwencloud.com/v1",
+)
+
+def chat_with_backoff(messages, model="qwen3.6-plus", max_retries=5):
+    for attempt in range(max_retries):
+        try:
+            return client.chat.completions.create(
+                model=model,
+                messages=messages,
+            )
+        except RateLimitError:
+            if attempt == max_retries - 1:
+                raise
+            wait = (2 ** attempt) + random.uniform(0, 1)
+            print(f"Rate limited. Retrying in {wait:.1f}s...")
+            time.sleep(wait)
+```
+
+<Tip>
+  Monitor your token consumption on the [usage page](/account/usage) to anticipate rate limit issues before they affect production workloads. Setting up usage alerts helps you act before your credits run out.
+</Tip>

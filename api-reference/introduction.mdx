@@ -1,0 +1,85 @@
+---
+title: "Qwen Cloud API: OpenAI-compatible model access"
+description: "Access Qwen Cloud's AI models through an OpenAI-compatible REST API. Authenticate with your API key and start sending requests in minutes."
+---
+
+Qwen Cloud's API gives you direct access to its AI models using the OpenAI protocol, so any tool or library built for OpenAI works with Qwen Cloud without modification. You can also use the Anthropic protocol if your tooling requires it. Authenticate with your API key, point your client at the Qwen Cloud base URL, and send requests the same way you would with any OpenAI-compatible provider.
+
+<Note>
+  If you haven't set up your account yet, follow the [quickstart guide](/quickstart) for step-by-step instructions on getting your API key and making your first request.
+</Note>
+
+## Base URL
+
+All API requests go to:
+
+```
+https://api.qwencloud.com/v1
+```
+
+## Authentication
+
+You authenticate by including your API key as a Bearer token in the `Authorization` header of every request.
+
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+To get your API key, log in to the [Qwen Cloud dashboard](https://home.qwencloud.com/), navigate to **API Keys**, and copy your key. Keep your API key private—do not expose it in client-side code or public repositories.
+
+## Available models
+
+Your Token Plan gives you access to the following models:
+
+| Model ID | Description |
+| --- | --- |
+| `qwen3.6-plus` | Qwen's flagship coding and reasoning model |
+| `glm-5` | GLM-5 general-purpose model |
+| `minimax-m2.5` | MiniMax M2.5 model |
+| `deepseek-v3.2` | DeepSeek V3.2 model |
+
+## Rate limits
+
+Your request rate is governed by your plan's credit quota. Each API call consumes credits based on the number of tokens processed. When your credits are exhausted, requests will return a `402 Payment Required` error until your plan renews or you upgrade. See [pricing](/token-plan/pricing) for credit details by tier.
+
+## Example requests
+
+<CodeGroup>
+
+```bash curl
+curl https://api.qwencloud.com/v1/chat/completions \
+  --header "Authorization: Bearer YOUR_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "model": "qwen3.6-plus",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain what an API key is in one sentence."
+      }
+    ]
+  }'
+```
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.qwencloud.com/v1",
+)
+
+response = client.chat.completions.create(
+    model="qwen3.6-plus",
+    messages=[
+        {
+            "role": "user",
+            "content": "Explain what an API key is in one sentence.",
+        }
+    ],
+)
+
+print(response.choices[0].message.content)
+```
+
+</CodeGroup>

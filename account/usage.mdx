@@ -1,0 +1,48 @@
+---
+title: 'Track credit usage and API activity in Qwen Cloud'
+description: 'See how to monitor your token consumption, check remaining credits, and avoid running out of credits before your billing cycle resets.'
+---
+
+Qwen Cloud gives you a set number of credits each month based on your Token Plan. Every API call you make consumes credits, and tracking your usage helps you stay within your plan limits and avoid unexpected interruptions. Your dashboard gives you a real-time view of where your credits are going.
+
+## View your usage in the dashboard
+
+Log in to [home.qwencloud.com](https://home.qwencloud.com/) to access your usage data. The dashboard shows:
+
+- **Credits used** — total credits consumed since the start of your current billing cycle
+- **Credits remaining** — how many credits you have left before the next reset
+- **Per-request breakdown** — a log of individual API calls with the model used and credits consumed per request
+
+Use the per-request breakdown to identify which models or workloads are consuming the most credits. This helps you optimize your API usage or decide whether to upgrade your plan.
+
+## Monthly credit reset
+
+Your credits reset at the start of each billing cycle. Unused credits do not carry over to the next month. The reset date matches the date you first subscribed.
+
+<Note>
+  You can find your next reset date in your billing settings at [home.qwencloud.com](https://home.qwencloud.com/). Plan around this date if you anticipate a high-usage period.
+</Note>
+
+## Tips to avoid running out of credits
+
+- **Check your usage weekly.** Reviewing your dashboard regularly helps you spot usage spikes before they become a problem.
+- **Set usage alerts.** If your dashboard supports notifications, enable alerts when you reach a percentage threshold of your monthly credits.
+- **Understand your workload patterns.** Look at per-request data to see which models you call most often. Some models consume more credits per request than others — see [credit details](/token-plan/credits) for a full breakdown.
+- **Estimate before you build.** Before starting a new integration, estimate how many credits it will consume per day and check whether your current plan can sustain it.
+
+<Tip>
+  If your credit usage is consistently high each month, upgrading to Pro or Max gives you significantly more headroom. Pro offers 100,000 credits per month, and Max offers 250,000. Visit the [pricing page](/token-plan/pricing) to compare plans and upgrade.
+</Tip>
+
+## What happens when credits are exhausted
+
+When your monthly credits run out, API calls stop succeeding for the rest of the billing cycle. Your application will receive errors until either:
+
+- Your credits reset at the start of the next billing cycle, or
+- You upgrade to a plan with a higher credit limit
+
+<Warning>
+  There is no automatic credit top-up or overage billing. If you need uninterrupted API access, upgrade your plan before your credits are exhausted. See [pricing](/token-plan/pricing) to switch plans.
+</Warning>
+
+To avoid hitting the limit mid-month, monitor your usage in the dashboard and factor your consumption patterns into your plan choice.

@@ -1,0 +1,39 @@
+---
+title: "Configure Cursor IDE to use Qwen Cloud AI models"
+description: "Add Qwen Cloud as a custom OpenAI-compatible model provider in Cursor IDE to use your Token Plan credits for AI chat and code completions."
+---
+
+Cursor supports custom OpenAI-compatible model providers, which means you can connect it directly to Qwen Cloud without waiting for an official integration. Once configured, Cursor routes all AI requests—chat, inline edits, and completions—through your Qwen Cloud Token Plan.
+
+<Steps>
+  <Step title="Get your API key">
+    Log in to the [Qwen Cloud dashboard](https://home.qwencloud.com/) and copy your API key from the **API Keys** section.
+  </Step>
+  <Step title="Open Cursor settings">
+    In Cursor, press `Cmd+,` (macOS) or `Ctrl+,` (Windows/Linux) to open **Settings**. Navigate to the **Models** tab.
+  </Step>
+  <Step title="Add a custom model provider">
+    Scroll to the **OpenAI API Key** section and enable **Override OpenAI Base URL**. Enter the following value in the base URL field:
+
+    ```
+    https://api.qwencloud.com/v1
+    ```
+  </Step>
+  <Step title="Enter your API key">
+    Paste your Qwen Cloud API key into the **OpenAI API Key** field. Cursor uses this key to authenticate requests to the custom base URL you set in the previous step.
+  </Step>
+  <Step title="Select a model">
+    Still in **Settings > Models**, add the model name you want to use. For example, type `qwen3.6-plus` and press **Add model**. You can also add `glm-5`, `minimax-m2.5`, or `deepseek-v3.2`.
+  </Step>
+  <Step title="Verify the connection">
+    Open the Cursor chat panel and send a short message. If you receive a response, Cursor is successfully connected to Qwen Cloud.
+  </Step>
+</Steps>
+
+<Warning>
+  Cursor stores the API key in its settings file. Avoid sharing your Cursor configuration with others, as it contains your Qwen Cloud credentials.
+</Warning>
+
+<Tip>
+  You can add multiple Qwen Cloud models to Cursor and switch between them from the model picker in the chat panel. For a full list of models on your plan, see the [Token Plan overview](/token-plan/overview).
+</Tip>

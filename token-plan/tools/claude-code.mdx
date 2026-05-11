@@ -1,0 +1,45 @@
+---
+title: "Use Claude Code with Qwen Cloud's Token Plan models"
+description: "Configure the Claude Code CLI to use Qwen Cloud's Anthropic-compatible endpoint, so your Token Plan credits power all Claude Code sessions."
+---
+
+Claude Code is Anthropic's CLI coding agent. It reads the `ANTHROPIC_API_KEY` and `ANTHROPIC_BASE_URL` environment variables to determine where to send requests. By pointing these variables at Qwen Cloud, you can run Claude Code against the models included in your Token Plan—without any changes to how you use the CLI itself.
+
+<Steps>
+  <Step title="Get your API key">
+    Log in to the [Qwen Cloud dashboard](https://home.qwencloud.com/) and copy your API key from the **API Keys** section.
+  </Step>
+  <Step title="Set the environment variables">
+    Export the two required variables in your terminal session. Set `ANTHROPIC_BASE_URL` to Qwen Cloud's Anthropic-compatible endpoint and `ANTHROPIC_API_KEY` to your Qwen Cloud API key.
+
+    <CodeGroup>
+
+    ```bash Single session
+    export ANTHROPIC_BASE_URL="https://api.qwencloud.com"
+    export ANTHROPIC_API_KEY="YOUR_QWEN_CLOUD_API_KEY"
+    ```
+
+    ```bash Persistent (add to ~/.bashrc or ~/.zshrc)
+    echo 'export ANTHROPIC_BASE_URL="https://api.qwencloud.com"' >> ~/.zshrc
+    echo 'export ANTHROPIC_API_KEY="YOUR_QWEN_CLOUD_API_KEY"' >> ~/.zshrc
+    source ~/.zshrc
+    ```
+
+    </CodeGroup>
+  </Step>
+  <Step title="Run Claude Code">
+    Start Claude Code as you normally would. It picks up the environment variables automatically and routes all requests to Qwen Cloud.
+
+    ```bash
+    claude
+    ```
+  </Step>
+</Steps>
+
+<Note>
+  The Anthropic-compatible base URL for Qwen Cloud is `https://api.qwencloud.com` (no `/v1` suffix). Claude Code appends the correct path automatically.
+</Note>
+
+<Tip>
+  To switch back to Anthropic's servers, unset the `ANTHROPIC_BASE_URL` variable: `unset ANTHROPIC_BASE_URL`. Your `ANTHROPIC_API_KEY` will then need to be a valid Anthropic key. For more about your Qwen Cloud plan, see the [Token Plan overview](/token-plan/overview).
+</Tip>

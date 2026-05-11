@@ -1,0 +1,39 @@
+---
+title: "Configure OpenClaw to use your Qwen Cloud Token Plan"
+description: "Set up OpenClaw to use Qwen Cloud's OpenAI-compatible API endpoint and access Qwen3.6-Plus, GLM-5, MiniMax-M2.5, and DeepSeek-V3.2 from your Token Plan."
+---
+
+OpenClaw is an AI coding agent that communicates using the OpenAI protocol. You configure it by providing an API endpoint and key, which makes it straightforward to connect to Qwen Cloud. All requests go through `https://api.qwencloud.com/v1`, and your Token Plan credits cover the usage.
+
+<Steps>
+  <Step title="Get your API key">
+    Log in to the [Qwen Cloud dashboard](https://home.qwencloud.com/) and copy your API key from the **API Keys** section.
+  </Step>
+  <Step title="Open OpenClaw configuration">
+    Locate the OpenClaw configuration file—typically `~/.openclaw/config.json` or a `openclaw.config.json` in your project root. Open it in your editor.
+  </Step>
+  <Step title="Set the API endpoint and key">
+    Update the `apiBaseUrl` and `apiKey` fields to point to Qwen Cloud. Set the `model` field to one of the models on your Token Plan.
+  </Step>
+  <Step title="Save and launch OpenClaw">
+    Save the configuration file and start OpenClaw. It connects to Qwen Cloud immediately and uses your Token Plan credits for all requests.
+  </Step>
+</Steps>
+
+Here is a complete example configuration:
+
+<CodeGroup>
+
+```json openclaw.config.json
+{
+  "apiBaseUrl": "https://api.qwencloud.com/v1",
+  "apiKey": "YOUR_QWEN_CLOUD_API_KEY",
+  "model": "qwen3.6-plus"
+}
+```
+
+</CodeGroup>
+
+<Tip>
+  You can switch between models by updating the `model` field. The available models on your Token Plan are `qwen3.6-plus`, `glm-5`, `minimax-m2.5`, and `deepseek-v3.2`. For billing questions or credit details, visit the [account FAQ](/account/faq).
+</Tip>
