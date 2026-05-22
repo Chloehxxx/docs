@@ -1,31 +1,24 @@
----
-title: "Quickstart: set up Qwen Cloud in under five minutes"
-description: "Sign up for Qwen Cloud, choose a Token Plan, copy your API key, and connect your preferred AI coding tool—all in under five minutes."
----
-
 Getting up and running with Qwen Cloud takes less than five minutes. You'll create an account, pick a Token Plan that matches your usage, copy your API key, and point your AI coding tool at the Qwen Cloud endpoint. Everything is compatible with the OpenAI and Anthropic API protocols, so there's no new SDK to learn.
 
-<Note>
+<Callout icon="pencil">
   Qwen Cloud's API is fully compatible with both the OpenAI and Anthropic protocols. If your tool already works with either standard, it works with Qwen Cloud—just update the base URL and API key.
-</Note>
+</Callout>
 
 <Steps>
   <Step title="Sign up for Qwen Cloud">
     Go to [home.qwencloud.com](https://home.qwencloud.com/) and create your account. You only need an email address to get started.
   </Step>
-
   <Step title="Choose a Token Plan">
     After signing in, select the plan that fits your workflow:
 
     | Plan | Price | Monthly credits |
-    |------|-------|-----------------|
-    | Standard | $30 / month | 25,000 credits |
-    | Pro | $100 / month | 100,000 credits |
-    | Max | $200 / month | 250,000 credits |
+    | --- | --- | --- |
+    | Standard | \$30 / month | 25,000 credits |
+    | Pro | \$100 / month | 100,000 credits |
+    | Max | \$200 / month | 250,000 credits |
 
     All plans give you access to every model Qwen Cloud supports. See the [Token Plan overview](/token-plan/overview) for details on how credits are calculated per model.
   </Step>
-
   <Step title="Copy your API key">
     Once your subscription is active, open the **API Keys** section of your dashboard. Click **Create key**, give it a name, and copy the key to a safe location.
 
@@ -33,7 +26,6 @@ Getting up and running with Qwen Cloud takes less than five minutes. You'll crea
       Your API key is only shown once. Store it in a password manager or secrets vault before closing the dialog.
     </Warning>
   </Step>
-
   <Step title="Configure your AI tool">
     Point your AI tool at the Qwen Cloud endpoint using these credentials:
 
@@ -47,7 +39,7 @@ Getting up and running with Qwen Cloud takes less than five minutes. You'll crea
 
     <CodeGroup>
 
-    ```bash curl
+    ```shellscript curl
     curl https://api.qwencloud.com/v1/chat/completions \
       --header "Authorization: Bearer $QWEN_API_KEY" \
       --header "Content-Type: application/json" \
@@ -65,17 +57,17 @@ Getting up and running with Qwen Cloud takes less than five minutes. You'll crea
     ```python Python
     import os
     from openai import OpenAI
-
+    
     client = OpenAI(
         api_key=os.environ["QWEN_API_KEY"],
         base_url="https://api.qwencloud.com/v1",
     )
-
+    
     response = client.chat.completions.create(
         model="qwen3.6-plus",
         messages=[{"role": "user", "content": "Say hello from Qwen Cloud."}],
     )
-
+    
     print(response.choices[0].message.content)
     ```
 
@@ -83,12 +75,13 @@ Getting up and running with Qwen Cloud takes less than five minutes. You'll crea
 
     A successful response confirms your API key and endpoint are working correctly.
   </Step>
-
-  <Step title="Start coding">
+  <Step title="Start coding" stepNumber={4}>
     Your AI coding tool is now connected to Qwen Cloud. Credits are deducted from your monthly pool as you use the models. You can monitor consumption at any time from the **Usage** section of your dashboard.
 
     <Tip>
       If you're using Qwen Code, see the [Qwen Code setup guide](/token-plan/tools/qwen-code) for tool-specific configuration steps and recommended model settings.
     </Tip>
+  </Step>
+  <Step iconType="solid" stepNumber={0}>
   </Step>
 </Steps>

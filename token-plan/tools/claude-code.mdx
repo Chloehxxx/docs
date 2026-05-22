@@ -3,6 +3,8 @@ title: "Use Claude Code with Qwen Cloud's Token Plan models"
 description: "Configure the Claude Code CLI to use Qwen Cloud's Anthropic-compatible endpoint, so your Token Plan credits power all Claude Code sessions."
 ---
 
+<Badge size="lg" shape="pill" disabled icon="7" />
+
 Claude Code is Anthropic's CLI coding agent. It reads the `ANTHROPIC_API_KEY` and `ANTHROPIC_BASE_URL` environment variables to determine where to send requests. By pointing these variables at Qwen Cloud, you can run Claude Code against the models included in your Token Plan—without any changes to how you use the CLI itself.
 
 <Steps>
@@ -28,6 +30,8 @@ Claude Code is Anthropic's CLI coding agent. It reads the `ANTHROPIC_API_KEY` an
     </CodeGroup>
   </Step>
   <Step title="Run Claude Code">
+    Start Claude Code as you normally would. It picks up the environment variables automatically and routes all requests to Qwen Cloud.
+
     Start Claude Code as you normally would. It picks up the environment variables automatically and routes all requests to Qwen Cloud.
 
     ```bash

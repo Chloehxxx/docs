@@ -28,7 +28,8 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart"
+              "quickstart",
+              "index"
             ]
           },
           {
@@ -81,5 +82,8 @@
         ]
       }
     ]
+  },
+  "styling": {
+    "latex": false
   }
 }
