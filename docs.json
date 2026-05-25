@@ -8,10 +8,7 @@
     "dark": "#cdcdcd"
   },
   "favicon": "https://media.brand.dev/487d6b2a-e967-40f3-b46b-68c445b88e2b.jpg",
-  "logo": {
-    "light": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg",
-    "dark": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg"
-  },
+  "logo": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg",
   "navbar": {
     "primary": {
       "type": "button",
@@ -29,7 +26,8 @@
             "pages": [
               "introduction",
               "quickstart",
-              "index"
+              "index",
+              "components-showcase.mdx"
             ]
           },
           {
@@ -85,5 +83,11 @@
   },
   "styling": {
     "latex": false
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "appearance": {
+    "strict": false
   }
 }
