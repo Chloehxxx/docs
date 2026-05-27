@@ -13,7 +13,7 @@
 <Accordion title="I am an Accordion." defaultOpen icon="air-conditioner" iconType="sharp-solid">
   You can put any content in here, including other components, like code:\`
 
-  ```java HelloWorld.java
+  ```javascript HelloWorld.java
    class HelloWorld {
        public static void main(String[] args) {
            System.out.println("Hello, World!");
@@ -181,3 +181,53 @@ xxxx
 </Expandable>
 
 ---
+
+<Tabs>
+  <Tab title="First tab">
+    ☝️ Welcome to the content that you can only see inside the first tab.
+
+    You can add any number of components inside of tabs. For example, a code block:
+
+    ```java HelloWorld.java
+      class HelloWorld {
+          public static void main(String[] args) {
+              System.out.println("Hello, World!");
+          }
+      }
+    ```
+  </Tab>
+  <Tab title="Second tab" icon="leaf">
+    ✌️ Here's content that's only inside the second tab.
+
+    This one has a <Icon icon="leaf" /> icon!
+  </Tab>
+  <Tab title="Third tab">
+    💪 Here's content that's only inside the third tab.
+  </Tab>
+</Tabs>
+
+<Tab title="Third tab">
+  💪 Here's content that's only inside the third tab.哦哦哦哦哦
+</Tab>
+<Tab title="First tab">
+  ☝️ Welcome to the content that you can only see inside the first tab.
+
+  You can add any number of components inside of tabs. For example, a code block:
+
+  ```java HelloWorld.java
+    class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+  ```
+</Tab>
+---
+
+<ResponseExample>
+
+```json Response
+{ "status": "success" }
+```
+
+</ResponseExample>
