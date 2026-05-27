@@ -85,9 +85,17 @@
     "latex": false
   },
   "icons": {
-    "library": "lucide"
+    "library": "fontawesome"
   },
   "appearance": {
     "strict": false
+  },
+  "banner": {
+    "content": "🎉 Join us at our annual conference!",
+    "dismissible": true,
+    "color": {
+      "light": "#7C3AED",
+      "dark": "#5B21B6"
+    }
   }
 }

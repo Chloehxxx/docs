@@ -1,8 +1,3 @@
----
-title: "组件展示大全"
-description: "展示 Mintlify 所有支持的内置 MDX 组件，包括布局、强调、导航和 API 文档组件。"
----
-
 本页面演示 Mintlify 所有支持的内置组件，方便你快速了解每种组件的外观与用法。
 
 ---
@@ -15,6 +10,11 @@ description: "展示 Mintlify 所有支持的内置 MDX 组件，包括布局、
   <Tab title="简介">
     Tabs 用于将相关内容组织成可切换的标签视图，让页面更整洁。
   </Tab>
+</Tabs>
+
+/
+
+<Tabs>
   <Tab title="示例代码">
     ```python
     def hello():
@@ -181,7 +181,7 @@ curl https://api.qwencloud.com/v1/chat/completions \
     每次 API 调用根据输入和输出的 Token 数量消耗相应的 Credits。不同模型的消耗速率不同，大型模型（如 Max 系列）消耗更多。
   </Accordion>
 
-  <Accordion title="Credit 用完了怎么办？" icon="circle-alert">
+  <Accordion title="Credit 用完了怎么办？" defaultOpen icon="align-start-vertical" iconType="solid">
     Credits 耗尽后，API 请求将返回错误，直到下个计费周期自动重置。你也可以随时升级到更高套餐来立即恢复访问。
   </Accordion>
 
@@ -355,6 +355,8 @@ flowchart LR
 品牌主色：
 
 <Color hex="#6366f1">
+  <Color.Item name="gray-200" value="#E7E5E4" />
+  <Color.Item name="gray-200" value="#be5d2d" />
 </Color>
 
 <Color hex="#22c55e">
