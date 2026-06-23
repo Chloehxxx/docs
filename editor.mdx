@@ -1,233 +1,27 @@
-## badge
-
-<Badge color="orange" size="lg" shape="pill" stroke disabled icon="airplay" iconType="solid">Label</Badge>  测试
-
 ---
-
-<Badge color="red" size="sm">Label</Badge>
-
+title: "Mintlify 组件示例"
 ---
-
----
-
-<Accordion title="I am an Accordion." defaultOpen icon="air-conditioner" iconType="sharp-solid">
-  You can put any content in here, including other components, like code:\`
-
-  ```javascript HelloWorld.java
-   class HelloWorld {
-       public static void main(String[] args) {
-           System.out.println("Hello, World!");
-       }
-   }
-  ```
-</Accordion>
-
----
-
-<AccordionGroup>
-  <Accordion title="Getting started">
-    You can put other components inside Accordions.
-
-    ```java HelloWorld.java
-    class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello, World!");
-        }
-    }
-    ```
-  </Accordion>
-
-  <Accordion title="Advanced features" icon="alien-8bit" iconType="duotone">
-    Add icons to make accordions more visually distinct and scannable.
-  </Accordion>
-</AccordionGroup>
-
----
-
-<Icon icon="arrow-up-short-wide" size={32} />
-
----
-
-## expandable
-
-<ResponseField name="user" type="User Object">
-  <Expandable title="properties">
-    <ResponseField name="full_name" type="string">
-      The full name of the user
-    </ResponseField>
-
-    <ResponseField name="is_over_21" type="boolean">
-      Whether the user is over 21 years old
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
----
-
-## link
-
-[xxxx](www.alib.com)
-
----
-
-## callout
-
-自定义
-
-<Callout icon="album-collection-circle-plus" iconType="solid" color="#d32020">
-  **通用 Callout**：这是一个自定义图标的提示框，支持任意颜色和图标。
-</Callout>
-
-不可自定义
-
-<Check>
-  ✅ 操作已成功完成。
-</Check>
-
-<Accordion icon="ankh">
-</Accordion>
-
-<Danger>
-  ⚠️ 危险操作：此操作不可撤销，请谨慎执行。
-</Danger>
 
 <Info>
-  ℹ️ 系统将在 2026 年 6 月 1 日进行维护升级。
+  xxxx
 </Info>
 
+<Check>
+  xxxx
+</Check>
+
 <Note>
-  📝 注意：API 密钥需要定期轮换以确保安全。
+  xxx
 </Note>
 
 <Tip>
-  💡 小提示：使用 `--verbose` 参数可以查看详细日志输出。
+  xxx
 </Tip>
 
 <Warning>
-  ⚠️ 警告：配置文件中存在不兼容的选项，可能导致运行时错误。
+  xxx
 </Warning>
 
----
-
-## accordion
-
-`Accordion` 是可折叠的内容面板，`AccordionGroup` 将其分组。
-
-<AccordionGroup>
-  <Accordion title="什么是 adoc-renderer？" defaultOpen icon="3" iconType="thin">
-    adoc-renderer 是一个基于 MDX 的文档渲染引擎，支持丰富的文档组件生态，可将 Markdown/AsciiDoc 内容渲染为交互式文档页面。
-  </Accordion>
-
-  <Accordion title="支持哪些内容格式？" description="了解输入格式" icon="7" iconType="sharp-solid">
-    目前支持 **MDX** 格式。未来计划支持更多格式如 AsciiDoc、reStructuredText 等。
-  </Accordion>
-
-  <Accordion title="如何自定义主题？" iconType="regular">
-    可以通过 `adoc-theme` 包创建自定义主题，覆盖默认的组件样式和布局配置。
-  </Accordion>
-</AccordionGroup>
-
-xxxx
-
----
-
-\<expandable\>\</expandable\>
-
-## card
-
-`Card` 是可点击的内容卡片，`CardGroup` 以网格布局排列它们。
-
-<CardGroup cols={3}>
-  <Card title="快速开始" icon="aperture" href="#">
-    5 分钟上手 adoc-renderer，创建你的第一个文档页面。
-  </Card>
-
-  <Card title="API 参考" color="blue" icon="apartment" href="#" img="https://upload.wikimedia.org/wikipedia/commons/c/c5/Hel_%281889%29_by_Johannes_Gehrts.jpg" cta="查看文档">
-    完整的 API 接口定义和使用说明。
-  </Card>
-
-  <Card title="社区资源" color="green" icon="arrow-down-a-z" href="#" img="https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico" arrow>
-    教程、示例项目与最佳实践分享。
-  </Card>
-</CardGroup>
-
----
-
-## columns
-
-`Columns` 将子内容排列为多列。
-
-<Columns cols={2}>
-  <Column>
-    ssssss1这里可以放置任何 MDX 内容，包括文本、列表、代码等。
-  </Column>
-  <Column>
-    sss111 两列并排展示，适合对比说明或多视角阐述。
-  </Column>
-</Columns>
-
----
-
-## Expandable — 可展开内容
-
-`Expandable` 提供可折叠的详情区域。
-
-<Expandable title="点击展开查看更多详情">
-  这里是展开后的详细内容。你可以在这里放置：- 详细说明- 代码片段- 配置示例支持任意 MDX 内容嵌套。
-</Expandable>
-
-<Expandable title="默认展开">
-  这个区域默认是展开的，`defaultOpen={true}` 使其初始可见。
-</Expandable>
-
----
-
-<Tabs>
-  <Tab title="First tab">
-    ☝️ Welcome to the content that you can only see inside the first tab.
-
-    You can add any number of components inside of tabs. For example, a code block:
-
-    ```java HelloWorld.java
-      class HelloWorld {
-          public static void main(String[] args) {
-              System.out.println("Hello, World!");
-          }
-      }
-    ```
-  </Tab>
-  <Tab title="Second tab" icon="leaf">
-    ✌️ Here's content that's only inside the second tab.
-
-    This one has a <Icon icon="leaf" /> icon!
-  </Tab>
-  <Tab title="Third tab">
-    💪 Here's content that's only inside the third tab.
-  </Tab>
-</Tabs>
-
-<Tab title="Third tab">
-  💪 Here's content that's only inside the third tab.哦哦哦哦哦
-</Tab>
-<Tab title="First tab">
-  ☝️ Welcome to the content that you can only see inside the first tab.
-
-  You can add any number of components inside of tabs. For example, a code block:
-
-  ```java HelloWorld.java
-    class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello, World!");
-        }
-    }
-  ```
-</Tab>
----
-
-<ResponseExample>
-
-```json Response
-{ "status": "success" }
-```
-
-</ResponseExample>
+<Danger>
+  xxx
+</Danger>
