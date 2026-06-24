@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "luma",
+  "theme": "mint",
   "name": "Qwen Cloud",
   "colors": {
     "primary": "#4f6df7",
@@ -25,7 +25,8 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "components-showcase.mdx"
+              "components-showcase.mdx",
+              "editor.mdx"
             ]
           },
           {
