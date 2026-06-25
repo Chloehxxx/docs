@@ -26,7 +26,8 @@
             "pages": [
               "index",
               "components-showcase.mdx",
-              "editor.mdx"
+              "editor.mdx",
+              "AGENTS.md"
             ]
           },
           {
