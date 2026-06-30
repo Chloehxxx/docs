@@ -14,7 +14,8 @@
       "type": "button",
       "label": "Get Started",
       "href": "https://home.qwencloud.com/"
-    }
+    },
+    "links": []
   },
   "navigation": {
     "tabs": [
@@ -88,8 +89,10 @@
     "content": "🎉 Join us at our annual conference!",
     "dismissible": true,
     "color": {
-      "light": "#7C3AED",
-      "dark": "#5B21B6"
+      "light": "#2128e4"
     }
+  },
+  "fonts": {
+    "family": "Inter"
   }
 }
