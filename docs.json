@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Qwen Cloud",
   "colors": {
     "primary": "#4f6df7",
@@ -74,7 +74,26 @@
           }
         ]
       }
-    ]
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "网站",
+          "icon": "globe",
+          "href": "https://qoder.com"
+        },
+        {
+          "anchor": "论坛",
+          "icon": "slack",
+          "href": "https://forum.qoder.com"
+        },
+        {
+          "anchor": "博客",
+          "icon": "newspaper",
+          "href": "https://qoder.com/blog"
+        }
+      ]
+    }
   },
   "styling": {
     "latex": false
