@@ -113,5 +113,39 @@
   },
   "fonts": {
     "family": "Inter"
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "产品",
+        "items": [
+          {
+            "label": "产品概览",
+            "href": "/zh/overview"
+          },
+          {
+            "label": "快速上手",
+            "href": "/zh/quickstart"
+          },
+          {
+            "label": "更新日志",
+            "href": "/zh/changelog"
+          }
+        ]
+      },
+      {
+        "header": "资源",
+        "items": [
+          {
+            "label": "常见问题",
+            "href": "/zh/help/faq"
+          },
+          {
+            "label": "媒体管理",
+            "href": "/zh/editor/files-and-media"
+          }
+        ]
+      }
+    ]
   }
 }
