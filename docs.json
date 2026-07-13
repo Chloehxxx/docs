@@ -57,43 +57,25 @@
       },
       {
         "tab": "API Reference",
-        "groups": [
+        "anchors": [
           {
-            "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "anchor": "网站",
+            "icon": "globe",
+            "href": "https://qoder.com"
           },
           {
-            "group": "Endpoints",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete"
-            ]
+            "anchor": "论坛",
+            "icon": "slack",
+            "href": "https://forum.qoder.com"
+          },
+          {
+            "anchor": "博客",
+            "icon": "newspaper",
+            "href": "https://qoder.com/blog"
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "网站",
-          "icon": "globe",
-          "href": "https://qoder.com"
-        },
-        {
-          "anchor": "论坛",
-          "icon": "slack",
-          "href": "https://forum.qoder.com"
-        },
-        {
-          "anchor": "博客",
-          "icon": "newspaper",
-          "href": "https://qoder.com/blog"
-        }
-      ]
-    }
+    ]
   },
   "styling": {
     "latex": false
