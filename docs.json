@@ -57,21 +57,37 @@
       },
       {
         "tab": "API Reference",
-        "anchors": [
+        "groups": [
           {
-            "anchor": "网站",
-            "icon": "globe",
-            "href": "https://qoder.com"
+            "group": "Get Started",
+            "pages": [
+              "index",
+              "components-showcase.mdx",
+              "editor.mdx",
+              "AGENTS.md"
+            ]
           },
           {
-            "anchor": "论坛",
-            "icon": "slack",
-            "href": "https://forum.qoder.com"
+            "group": "Token Plan",
+            "pages": []
           },
           {
-            "anchor": "博客",
-            "icon": "newspaper",
-            "href": "https://qoder.com/blog"
+            "group": "AI Tools",
+            "pages": []
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              {
+                "group": "Global settings",
+                "pages": [
+                  "account/faq"
+                ]
+              },
+              "account/subscription",
+              "account/usage",
+              "account/faq"
+            ]
           }
         ]
       }
