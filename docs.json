@@ -18,77 +18,36 @@
     "links": []
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "index",
-              "components-showcase.mdx",
-              "editor.mdx",
-              "AGENTS.md"
-            ]
-          },
-          {
-            "group": "Token Plan",
-            "pages": []
-          },
-          {
-            "group": "AI Tools",
-            "pages": []
-          },
-          {
-            "group": "Account & Billing",
-            "pages": [
-              {
-                "group": "Global settings",
-                "pages": [
-                  "account/faq"
-                ]
-              },
-              "account/subscription",
-              "account/usage",
-              "account/faq"
-            ]
-          }
+        "group": "Get Started",
+        "pages": [
+          "index",
+          "components-showcase.mdx",
+          "editor.mdx",
+          "AGENTS.md"
         ]
       },
       {
-        "tab": "API Reference",
-        "groups": [
+        "group": "Token Plan",
+        "pages": []
+      },
+      {
+        "group": "AI Tools",
+        "pages": []
+      },
+      {
+        "group": "Account & Billing",
+        "pages": [
           {
-            "group": "Get Started",
+            "group": "Global settings",
             "pages": [
-              "index",
-              "components-showcase.mdx",
-              "editor.mdx",
-              "AGENTS.md"
-            ]
-          },
-          {
-            "group": "Token Plan",
-            "pages": []
-          },
-          {
-            "group": "AI Tools",
-            "pages": []
-          },
-          {
-            "group": "Account & Billing",
-            "pages": [
-              {
-                "group": "Global settings",
-                "pages": [
-                  "account/faq"
-                ]
-              },
-              "account/subscription",
-              "account/usage",
               "account/faq"
             ]
-          }
+          },
+          "account/subscription",
+          "account/usage",
+          "account/faq"
         ]
       }
     ]
