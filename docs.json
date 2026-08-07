@@ -25,7 +25,13 @@
           "index",
           "components-showcase.mdx",
           "editor.mdx",
-          "AGENTS.md"
+          "AGENTS.md",
+          {
+            "group": "test",
+            "pages": [
+              "untitled-page"
+            ]
+          }
         ]
       },
       {
