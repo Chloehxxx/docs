@@ -22,7 +22,6 @@
       {
         "group": "Get Started",
         "pages": [
-          "index",
           "components-showcase.mdx",
           "editor.mdx",
           "AGENTS.md",
@@ -32,7 +31,8 @@
               "untitled-page"
             ]
           }
-        ]
+        ],
+        "root": "index"
       },
       {
         "group": "Token Plan",
