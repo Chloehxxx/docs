@@ -28,9 +28,9 @@
           {
             "group": "test",
             "pages": [
-              "untitled-page",
               "untitled-page-2"
-            ]
+            ],
+            "root": "untitled-page"
           }
         ],
         "root": "index"
