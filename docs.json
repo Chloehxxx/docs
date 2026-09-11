@@ -18,44 +18,48 @@
     "links": []
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Get Started",
-        "pages": [
-          "components-showcase.mdx",
-          "editor.mdx",
-          "AGENTS.md",
+        "tab": "api",
+        "groups": [
           {
-            "group": "test",
-            "pages": [
-              "untitled-page-2"
-            ],
-            "root": "untitled-page"
-          }
-        ],
-        "root": "index"
-      },
-      {
-        "group": "Token Plan",
-        "pages": []
-      },
-      {
-        "group": "AI Tools",
-        "pages": []
-      },
-      {
-        "group": "Account & Billing",
-        "pages": [
+            "group": "AI Tools",
+            "pages": []
+          },
           {
-            "group": "Global settings",
+            "group": "Account & Billing",
             "pages": [
+              {
+                "group": "Global settings",
+                "pages": [
+                  "account/faq"
+                ]
+              },
+              "account/subscription",
+              "account/usage",
               "account/faq"
             ]
           },
-          "account/subscription",
-          "account/usage",
-          "account/faq"
+          {
+            "group": "Get Started",
+            "root": "index",
+            "pages": [
+              "components-showcase.mdx",
+              "editor.mdx",
+              "AGENTS.md",
+              {
+                "group": "test",
+                "root": "untitled-page",
+                "pages": [
+                  "untitled-page-2"
+                ]
+              }
+            ]
+          }
         ]
+      },
+      {
+        "tab": "doc"
       }
     ]
   },
