@@ -18,48 +18,53 @@
     "links": []
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "api",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "AI Tools",
-            "pages": []
-          },
-          {
-            "group": "Account & Billing",
-            "pages": [
+            "tab": "api",
+            "groups": [
               {
-                "group": "Global settings",
+                "group": "AI Tools",
+                "pages": []
+              },
+              {
+                "group": "Account & Billing",
                 "pages": [
+                  {
+                    "group": "Global settings",
+                    "pages": [
+                      "account/faq"
+                    ]
+                  },
+                  "account/subscription",
+                  "account/usage",
                   "account/faq"
                 ]
               },
-              "account/subscription",
-              "account/usage",
-              "account/faq"
-            ]
-          },
-          {
-            "group": "Get Started",
-            "root": "index",
-            "pages": [
-              "components-showcase.mdx",
-              "editor.mdx",
-              "AGENTS.md",
               {
-                "group": "test",
-                "root": "untitled-page",
+                "group": "Get Started",
+                "root": "index",
                 "pages": [
-                  "untitled-page-2"
+                  "components-showcase.mdx",
+                  "editor.mdx",
+                  "AGENTS.md",
+                  {
+                    "group": "test",
+                    "root": "untitled-page",
+                    "pages": [
+                      "untitled-page-2"
+                    ]
+                  }
                 ]
               }
             ]
+          },
+          {
+            "tab": "doc"
           }
         ]
-      },
-      {
-        "tab": "doc"
       }
     ]
   },
