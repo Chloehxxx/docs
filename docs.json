@@ -1,75 +1,50 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Qwen Cloud",
+  "name": "Mintlify Starter Kit",
   "colors": {
-    "primary": "#4f6df7",
-    "light": "#4f6df7",
-    "dark": "#4f6df7"
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
   },
-  "favicon": "https://media.brand.dev/487d6b2a-e967-40f3-b46b-68c445b88e2b.jpg",
-  "logo": "https://media.brand.dev/7962a2cb-cf1f-4617-a01b-ec38b52788f2.svg",
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Get Started",
-      "href": "https://home.qwencloud.com/"
+      "label": "Dashboard",
+      "href": "https://app.mintlify.com"
     },
-    "links": []
+    "links": [
+      {
+        "href": "mailto:support@mintlify.com",
+        "label": "Support"
+      }
+    ]
   },
   "navigation": {
-    "languages": [
+    "anchors": [
       {
-        "language": "en",
-        "tabs": [
-          {
-            "tab": "api",
-            "groups": [
-              {
-                "group": "AI Tools",
-                "pages": []
-              },
-              {
-                "group": "Account & Billing",
-                "pages": [
-                  {
-                    "group": "Global settings",
-                    "pages": [
-                      "account/faq"
-                    ]
-                  },
-                  "account/subscription",
-                  "account/usage",
-                  "account/faq"
-                ]
-              },
-              {
-                "group": "Get Started",
-                "root": "index",
-                "pages": [
-                  "components-showcase.mdx",
-                  "editor.mdx",
-                  "AGENTS.md",
-                  {
-                    "group": "test",
-                    "root": "untitled-page",
-                    "pages": [
-                      "untitled-page-2"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "doc"
-          }
+        "anchor": "Documentation",
+        "icon": "book-open-cover",
+        "pages": [
+          "zh/quickstart",
+          "development",
+          "navigation"
         ]
+      },
+      {
+        "anchor": "Blog",
+        "icon": "newspaper",
+        "href": "https://mintlify.com/blog"
       }
     ]
   },
   "styling": {
-    "latex": false
+    "eyebrows": "breadcrumbs"
   },
   "icons": {
     "library": "fontawesome"
@@ -85,5 +60,23 @@
     }
   },
   "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ],
+    "display": "toc"
   }
 }
