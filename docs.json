@@ -26,20 +26,30 @@
     ]
   },
   "navigation": {
-    "anchors": [
+    "groups": [
       {
-        "anchor": "Documentation",
+        "group": "Blog1",
         "icon": "book-open-cover",
         "pages": [
-          "zh/quickstart",
           "development",
           "navigation"
         ]
       },
       {
-        "anchor": "Blog",
+        "group": "Blog",
         "icon": "newspaper",
-        "href": "https://mintlify.com/blog"
+        "root": "zh/quickstart",
+        "pages": [
+          "development-2",
+          "api-reference/introduction",
+          {
+            "group": "xxxx",
+            "pages": [
+              "editor",
+              "untitled-page-2"
+            ]
+          }
+        ]
       }
     ]
   },
