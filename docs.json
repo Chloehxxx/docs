@@ -38,7 +38,7 @@
       {
         "group": "Blog",
         "icon": "newspaper",
-        "root": "zh/quickstart",
+        "root": "test",
         "pages": [
           "development-2",
           "api-reference/introduction",
